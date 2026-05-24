@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+  CUSTOMIZE BEFORE PUBLISHING
+  ════════════════════════════════════════════════════════════════════════════
+  Find-and-replace these placeholders throughout the file:
+
+    My Life on the Move        →  Your brand / app name (e.g. "Wander Notes")
+    {APP_TAGLINE}     →  One-line description (e.g. "Travel video automation
+                          for indie creators")
+    cyberwire2025@gmail.com      →  Contact email (e.g. "hello@yourhandle.com")
+    Mylifeonthemove     →  Your public handle, no @ (e.g. "yourhandle")
+    {SITE_URL}        →  Where this page will live
+                          (e.g. "https://yourhandle.github.io/privacy")
+    24 May 2026    →  Date in "24 May 2026" format
+
+  That's it. Everything else is generic enough to apply to any indie creator
+  workflow and is written specifically to satisfy Meta / Google / TikTok
+  reviewer requirements.
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Life on the Move — Privacy Policy</title>
+  <meta name="description" content="Privacy policy and information for My Life on the Move, Sharing my Journey" />
+
+  <!-- Open Graph (link previews on social) -->
+  <meta property="og:title" content="My Life on the Move — Privacy Policy" />
+  <meta property="og:description" content="{APP_TAGLINE}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{SITE_URL}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper: #faf7f2;
+      --paper-warm: #f3ede1;
+      --ink: #1a1614;
+      --ink-soft: #4a4239;
+      --ink-mute: #8a7e6f;
+      --accent: #b8553b;
+      --accent-deep: #8d3f2b;
+      --rule: #d9cfbe;
+
+      --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --font-body: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+      --col: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.65;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(184, 85, 59, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 85% 90%, rgba(138, 126, 111, 0.06) 0%, transparent 50%);
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--paper);
+    }
+
+    /* ── grain texture overlay ─────────────────────────────────────────── */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    main,
+    header,
+    footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── layout ────────────────────────────────────────────────────────── */
+    .container {
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ── topbar ────────────────────────────────────────────────────────── */
+    .topbar {
+      padding: 36px 0 0;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--ink-mute);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .topbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .topbar .logo svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .topbar nav a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      margin-left: 22px;
+      transition: color 160ms ease;
+    }
+
+    .topbar nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ── hero ──────────────────────────────────────────────────────────── */
+    .hero {
+      padding: 96px 0 64px;
+      animation: rise 700ms cubic-bezier(.2, .7, .2, 1) both;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      flex: 0 0 24px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    .eyebrow span {
+      white-space: nowrap;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-style: normal;
+      font-size: clamp(2.6rem, 6.5vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin: 0 0 30px;
+      font-variation-settings: "opsz" 144, "SOFT" 50;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .hero .lede {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 0 0 38px;
+      max-width: 56ch;
+    }
+
+    .hero .meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      color: var(--ink-mute);
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    .hero .meta span strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── ornament between sections ─────────────────────────────────────── */
+    .ornament {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin: 48px 0;
+      color: var(--rule);
+    }
+
+    .ornament .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+
+    .ornament .line {
+      height: 1px;
+      width: 60px;
+      background: var(--rule);
+    }
+
+    /* ── sections ──────────────────────────────────────────────────────── */
+    section {
+      padding: 12px 0;
+    }
+
+    section h2 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(1.55rem, 3.4vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin: 32px 0 14px;
+      font-variation-settings: "opsz" 60;
+    }
+
+    section h2 .num {
+      font-family: var(--font-mono);
+      font-size: 0.5em;
+      vertical-align: 0.45em;
+      color: var(--accent);
+      margin-right: 14px;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    section h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      color: var(--ink);
+      margin: 28px 0 6px;
+    }
+
+    section p,
+    section ul {
+      color: var(--ink-soft);
+      margin: 0 0 16px;
+    }
+
+    section ul {
+      padding-left: 24px;
+    }
+
+    section ul li {
+      margin-bottom: 6px;
+    }
+
+    section p strong,
+    section li strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    section a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 160ms ease;
+    }
+
+    section a:hover {
+      color: var(--accent-deep);
+    }
+
+    /* ── pull-quote service list ──────────────────────────────────────── */
+    .services {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+
+    .services li {
+      background: var(--paper-warm);
+      padding: 18px 22px;
+      margin: 0;
+    }
+
+    .services li .name {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .services li .what {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+
+    .services li .what a {
+      font-size: 13px;
+    }
+
+    /* ── contact card ──────────────────────────────────────────────────── */
+    .contact-card {
+      background: var(--paper-warm);
+      border-left: 3px solid var(--accent);
+      padding: 26px 30px;
+      margin: 28px 0;
+    }
+
+    .contact-card p {
+      margin: 0 0 4px;
+    }
+
+    .contact-card .label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 4px;
+    }
+
+    .contact-card .email {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ── footer ────────────────────────────────────────────────────────── */
+    footer {
+      margin-top: 80px;
+      padding: 40px 0 56px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--ink-mute);
+      text-align: center;
+    }
+
+    footer .mark {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 14px;
+      letter-spacing: 0;
+      margin-bottom: 8px;
+    }
+
+    /* ── animations ────────────────────────────────────────────────────── */
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: rise 600ms ease both;
+      animation-delay: calc(var(--i, 0) * 80ms + 200ms);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      ::before,
+      ::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar {
+        padding-top: 24px;
+      }
+
+      .topbar nav a {
+        margin-left: 14px;
+      }
+
+      .hero {
+        padding: 60px 0 40px;
+      }
+
+      .hero .meta {
+        gap: 16px;
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="container topbar">
+    <a href="#" class="logo" aria-label="My Life on the Move">
+      <!-- Simple geometric mark — a circle with a small triangle inside, suggestive of "lens" + "play" -->
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" stroke="#1a1614" stroke-width="1.5" />
+        <path d="M13 11.5 L22 16 L13 20.5 Z" fill="#b8553b" />
+        <circle cx="16" cy="16" r="6" stroke="#1a1614" stroke-width="1" opacity="0.4" />
+      </svg>
+      <span>My Life on the Move</span>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#policy">Privacy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="container hero" style="--i: 0;">
+      <p class="eyebrow"><span>Privacy &amp; Information</span></p>
+      <h1>My Life on the Move <em>is a small, careful tool.</em></h1>
+      <p class="lede">Sharing my Journey This page explains what data the tool handles, what it never touches, and how
+        to
+        get in touch.</p>
+      <div class="meta">
+        <span>Last updated <strong>24 May 2026</strong></span>
+        <span>Maintained by <strong>Mylifeonthemove</strong></span>
+      </div>
+    </section>
+
+    <div class="ornament" aria-hidden="true">
+      <span class="line"></span>
+      <span class="dot"></span>
+      <span class="line"></span>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="container" style="--i: 1;">
+      <h2><span class="num">01</span>What this is</h2>
+      <p>My Life on the Move is a personal automation tool that helps a single creator — me — turn short videos I have
+        recorded myself into short-form social posts for my own accounts on Instagram, YouTube Shorts, Facebook, and
+        TikTok.</p>
+      <p>I send a video to a private Telegram bot. The bot generates captions and overlay text using the OpenAI API,
+        renders the final video, and publishes it to my own social accounts after I tap to approve. The tool is not
+        offered to other users; it has no signups, no website logins, no public interface beyond this page.</p>
+    </section>
+
+    <div class="ornament" aria-hidden="true">
+      <span class="line"></span>
+      <span class="dot"></span>
+      <span class="line"></span>
+    </div>
+
+    <!-- PRIVACY POLICY -->
+    <section id="policy" class="container" style="--i: 2;">
+      <h2><span class="num">02</span>Privacy policy</h2>
+      <p>This privacy policy describes how My Life on the Move (referred to below as &ldquo;the app&rdquo;,
+        &ldquo;we&rdquo;, or &ldquo;our&rdquo;) handles information when it is used by its operator and how it interacts
+        with the platforms it connects to.</p>
+      <p>Because the app is a single-operator personal tool, it does not collect information from members of the public.
+        The platforms it publishes to — Instagram, Facebook, YouTube, and TikTok — collect and process data from their
+        viewers according to <strong>their own</strong> privacy policies, not ours.</p>
+
+      <h3>What information the app handles</h3>
+      <ul>
+        <li><strong>Videos and captions you send to the bot.</strong> These are stored temporarily on the
+          operator&rsquo;s own computer, processed through video tooling, and then uploaded to the social platforms you
+          have approved.</li>
+        <li><strong>Generated text</strong> (titles, captions, hashtags, overlay text) produced by the OpenAI API based
+          on the topic and video you provide.</li>
+        <li><strong>Access tokens</strong> for the social platforms you authorize. These are stored locally on the
+          operator&rsquo;s computer in protected files. They are never shared, sold, or transmitted to any third party
+          other than the platform that issued them.</li>
+        <li><strong>Operational logs</strong> (timestamps of uploads, which post went to which platform, errors). Stored
+          locally in a SQLite database on the operator&rsquo;s computer.</li>
+      </ul>
+
+      <h3>What the app does <em>not</em> do</h3>
+      <ul>
+        <li>It does not read messages, posts, friends, follower lists, DMs, or any content belonging to other users on
+          any platform.</li>
+        <li>It does not collect data from visitors to your social profiles.</li>
+        <li>It does not run any tracking, advertising, or analytics on this website.</li>
+        <li>It does not sell, rent, lease, or otherwise share any data with third parties for marketing.</li>
+        <li>It does not store data on cloud servers operated by us. All operational data lives on the operator&rsquo;s
+          own computer.</li>
+      </ul>
+
+      <h3>Third-party services used</h3>
+      <p>The app integrates with the following services. Each handles data according to its own privacy policy, which
+        you should consult if you want details on their practices.</p>
+
+      <ul class="services">
+        <li>
+          <span class="name">Meta (Instagram &amp; Facebook)</span>
+          <span class="what">Receives the final processed video, caption, and hashtags for publishing. <a
+              href="https://www.facebook.com/privacy/policy/" rel="noopener" target="_blank">Privacy policy</a></span>
+        </li>
+        <li>
+          <span class="name">Google (YouTube)</span>
+          <span class="what">Receives the final processed video and metadata for publishing as a YouTube Short. <a
+              href="https://policies.google.com/privacy" rel="noopener" target="_blank">Privacy policy</a></span>
+        </li>
+        <li>
+          <span class="name">TikTok</span>
+          <span class="what">Receives the final processed video and metadata for publishing. <a
+              href="https://www.tiktok.com/legal/page/row/privacy-policy/en" rel="noopener" target="_blank">Privacy
+              policy</a></span>
+        </li>
+        <li>
+          <span class="name">OpenAI</span>
+          <span class="what">Receives the topic plus sampled video frames to generate text. Per OpenAI policy, API data
+            is not used for training. <a href="https://openai.com/policies/privacy-policy" rel="noopener"
+              target="_blank">Privacy policy</a></span>
+        </li>
+        <li>
+          <span class="name">Telegram</span>
+          <span class="what">Hosts the private bot interface used to send videos to the app. <a
+              href="https://telegram.org/privacy" rel="noopener" target="_blank">Privacy policy</a></span>
+        </li>
+      </ul>
+
+      <p>The app&rsquo;s use of information received from Meta APIs follows the <a
+          href="https://developers.facebook.com/terms" rel="noopener" target="_blank">Meta Platform Terms</a> and <a
+          href="https://developers.facebook.com/devpolicy/" rel="noopener" target="_blank">Developer Policies</a>.
+        Similarly, use of YouTube data follows the <a
+          href="https://developers.google.com/youtube/terms/api-services-terms-of-service" rel="noopener"
+          target="_blank">YouTube API Services Terms</a> and the <a href="https://policies.google.com/privacy"
+          rel="noopener" target="_blank">Google Privacy Policy</a>, and use of TikTok data follows the <a
+          href="https://developers.tiktok.com/doc/tiktok-api-policies-overview" rel="noopener" target="_blank">TikTok
+          Developer Terms</a>.</p>
+
+      <h3>How long data is kept</h3>
+      <p>Raw video files received via the bot are kept for up to <strong>30 days</strong> on the operator&rsquo;s
+        computer for retry and debugging, then deleted. Processed videos that have been published are kept for
+        record-keeping. Operational logs are kept indefinitely but contain no third-party personal data. Access tokens
+        are kept for as long as they remain valid; expired tokens are deleted.</p>
+
+      <h3>Your rights</h3>
+      <p>If you are someone whose data has somehow ended up in this app (for example, you appear in a video I have
+        recorded), you can email the address below to request that I delete the related content and any derived files.
+        Because this is a personal tool with a tiny dataset, requests are usually fulfilled within a few days.</p>
+      <p>Where applicable under UK GDPR, you also have the right to access information about how your data is processed,
+        to correct it, and to lodge a complaint with the <a href="https://ico.org.uk/" rel="noopener" target="_blank">UK
+          Information Commissioner&rsquo;s Office</a>.</p>
+
+      <h3>Children</h3>
+      <p>This app is not intended for or directed at children under 13 (or under 16 in the EU/UK). No data about
+        children is knowingly processed.</p>
+
+      <h3>Security</h3>
+      <p>Access tokens are stored on a single computer protected by full-disk encryption and user-account
+        authentication. Network traffic to and from third-party APIs is encrypted in transit (HTTPS / TLS). No
+        production database is exposed to the internet.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>If material changes happen, the &ldquo;Last updated&rdquo; date at the top of this page will change and a brief
+        summary of what changed will be added below.</p>
+    </section>
+
+    <div class="ornament" aria-hidden="true">
+      <span class="line"></span>
+      <span class="dot"></span>
+      <span class="line"></span>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container" style="--i: 3;">
+      <h2><span class="num">03</span>Contact</h2>
+      <p>If you have a question about this policy, a removal request, or any other concern related to the app, the best
+        way to reach me is by email.</p>
+
+      <div class="contact-card">
+        <p class="label">Email</p>
+        <p class="email"><a href="mailto:cyberwire2025@gmail.com">cyberwire2025@gmail.com</a></p>
+      </div>
+
+      <p>I typically reply within a few working days.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="mark">— My Life on the Move —</div>
+      <div>© <span id="year">2026</span> Mylifeonthemove. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update the year so the footer never goes stale
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
